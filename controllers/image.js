@@ -1,5 +1,6 @@
+import fetch from 'node-fetch';
 
-const handleApiCall = (req, res) => {
+export const handleApiCall = (req, res) => {
   const PAT = process.env.PAT;
   const USER_ID = process.env.USER_ID;    
   const APP_ID = process.env.APP_ID;
@@ -44,7 +45,7 @@ const handleApiCall = (req, res) => {
     .catch(err => res.status(400).json('unable to work with API'))
 }
 
-const handleImage = (req, res, db) => {
+export const handleImage = (req, res, db) => {
   const { id } = req.body;
   db('users').where('id', '=', id)
   .increment('entries', 1)
@@ -55,7 +56,3 @@ const handleImage = (req, res, db) => {
   .catch(err => res.status(400).json('unable to get entries'))
 }
 
-module.exports = {
-  handleImage: handleImage,
-  handleApiCall: handleApiCall
-}
