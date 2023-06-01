@@ -1,3 +1,4 @@
+import 'dotenv/config';
 import express  from 'express';
 import bcrypt from 'bcrypt-nodejs';
 import cors from 'cors';
