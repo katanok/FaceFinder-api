@@ -1,9 +1,9 @@
 import fetch from 'node-fetch';
 
 export const handleApiCall = (req, res) => {
-  const PAT = process.env.PAT;
-  const USER_ID = process.env.USER_ID;    
-  const APP_ID = process.env.APP_ID;
+  const PAT = '6be9f141ee7c449aaa99648a61688e4f'; //process.env.PAT;
+  const USER_ID = 'keinv'; //process.env.USER_ID;    
+  const APP_ID = 'facefinder'; //process.env.APP_ID;
   const MODEL_ID = 'face-detection';
   const MODEL_VERSION_ID = '6dc7e46bc9124c5c8824be4822abe105';    
   const IMAGE_URL = req.body.input;
